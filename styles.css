@@ -183,6 +183,7 @@ button {
   border-radius: 1.2rem;
   cursor: pointer;
   width: 18rem;
+  border: none;
 }
 
 button#play-again {
