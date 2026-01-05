@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rps-player-start</title>
+    <link rel="stylesheet" href="../styles.css">
+
+    <!--Press start 2P-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#35527a"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+    </div>
+    <div class="main selector">
+        <div class="input-cont">
+            <div class="selection-buttons-cont">
+            <label>Player 1 name:</label>
+            <input type="text" id="player1Name">
+            </div>
+            <div class="selection-buttons-cont">
+            <label>Player 2 name:</label>
+            <input type="text" id="player2Name">
+            </div>
+        </div>   
+        <button onclick="captureNames()">Play</button> 
+    </div>
+
+    <script>
+        const nav = document.querySelector(".nav");
+            nav.addEventListener("click", () => {
+            window.location.href = "../index.html";
+        });
+
+        function captureNames () {
+            const Player1Name = document.getElementById("player1Name").value;
+            const player2Name = document.getElementById("player2Name").value;
+
+            // check if name was entered
+            if (!Player1Name) {
+                alert("Please enter a name for Player 1 before proceeding");
+                return;
+            }
+            if (!player2Name) {
+                alert("Please enter a name for Player 2 before proceeding");
+                return;
+            }
+
+            //build query parameters
+            const params = new URLSearchParams();
+            params.set("player1", Player1Name);
+            params.set("player2", player2Name);
+            params.set("mode", "multi");
+
+            window.location.href = "./player-1-selection.html?" + params.toString();
+        }
+    </script>
+</body>
+</html>
