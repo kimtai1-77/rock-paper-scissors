@@ -36,7 +36,7 @@ h1, h2, h3, p {
 }
 
 p {
-  font-size: clamp(1.2rem, 1.2rem + 0.5vw, 1.6rem);
+  font-size: clamp(1.2rem, 1rem + 0.5vw, 1.6rem);
 }
 
 body {
@@ -85,7 +85,7 @@ body {
   display: flex;
   color: var(--cr-3);
   /*border: 2px solid var(--cr-3);*/
-  margin-bottom: 20%;
+  margin-bottom: 5%;
   border-radius: 6px;
   cursor: pointer;
 }
@@ -188,6 +188,7 @@ button {
 button#play-again {
   width: 24rem;
   margin-bottom: 2rem;
+  border: none;
 }
 
 button[data-set], button[data-set]:hover {
@@ -196,6 +197,7 @@ button[data-set], button[data-set]:hover {
   font-family: monospace;
   color: var(--cr-2);
   background-color: var(--dk-1);
+  border: .5px solid var(--cr-3);
 }
 
 .selection-buttons {
