@@ -52,6 +52,8 @@
     <script>
         window.addEventListener("DOMContentLoaded", () => {
 
+            const params = new URLSearchParams(window.location.search);
+
             // Reference modal and elements
             const switchModal = document.getElementById("switchMode");
             const switchMessage = document.getElementById("switchMessage");
@@ -70,7 +72,6 @@
             switchButton.addEventListener("click", () => {
                 
                 // Read current mode from URL
-                const params = new URLSearchParams(window.location.search);
                 const currentMode = params.getItem("mode");
 
                 // Set the message depending on mode
@@ -86,15 +87,13 @@
 
             // Handle "Yes" button
             confirmBtn.addEventListener("click", () => {
-                const currentMode = sessionStorage.getItem("mode") || "single";
+                const currentMode = params.getItem("mode") || "single";
 
                 // Flip the mode
                 if (currentMode === "multi") {
-                sessionStorage.setItem("mode", "single");
                 // Redirect to single player start page
                 window.location.href = "./start.html";
             } else {
-                sessionStorage.setItem("mode", "multi");
                 // Redirect to multiplayer start page
                 window.location.href = "./player-start.html";
                 }
@@ -111,7 +110,6 @@
 
         window.addEventListener("DOMContentLoaded", () => {
         // 1. Read choices from the URL
-        const params = new URLSearchParams(window.location.search);
         const mode = params.get("mode"); // "single" or "multi"
         const player1Name = params.get("player1");
         const player2Name = params.get("player2");
