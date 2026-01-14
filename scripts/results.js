@@ -94,3 +94,8 @@ function updateParams() {
   })
 }
 
+const returnHome = document.querySelector(".return"); 
+returnHome.addEventListener("click", () => {
+  goHome();
+})
+
