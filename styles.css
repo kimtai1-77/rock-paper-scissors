@@ -16,6 +16,7 @@ html {
   --cr-3: #b38d57;
   --cr-4: #67481e;
   --cr-5: #1e1406;
+  --dk-000: #5678a7;
   --dk-00: #35527a;
   --dk-1: #1a2a40;
   --dk-2: #040a12;
@@ -283,10 +284,10 @@ button[data-choice="play"] {
 }
 
 .return {
-  color: var(--dk-00);
+  color: var(--dk-000);
   background-color: var(--dk-1);
   border-radius: .8rem;
-  border: 1px solid var(--dk-00);
+  border: 1px solid var(--dk-000);
 }
 
 .return:hover {
