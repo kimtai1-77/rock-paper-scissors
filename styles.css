@@ -23,10 +23,19 @@ html {
   --ter-1: #9881ca;
   --ter-2: #46336e;
   --ter-3: #1e1239;
+  --dk-grey: #585a5c;
 }
 
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+
+
+
+
 h1 {
-  font-size: clamp(2.4rem, 2rem + 2.5vw, 4rem);
+  font-size: clamp(2.4rem, 2rem + 1.5vw, 4rem);
 }
 
 h1, h2, h3, p {
@@ -35,8 +44,18 @@ h1, h2, h3, p {
   line-height: 1.8;
 }
 
-p {
+p, form {
   font-size: clamp(1.2rem, 1rem + 0.5vw, 1.6rem);
+}
+
+select {
+  border-radius: 6px;
+}
+
+select option {
+  background-color: var(--dk-2);
+  color: var(--ter-1);
+  font-family: monospace;
 }
 
 body {
@@ -80,7 +99,7 @@ body {
   background-color: var(--dk-1);
 }
 
-.nav {
+.home {
   padding: 2rem;
   display: flex;
   color: var(--cr-3);
@@ -103,7 +122,17 @@ body {
 }
 
 span {
+  color: var(--ter-0);
+}
+
+form {
   color: var(--cr-3);
+}
+
+input[type="radio"] {
+  transform: scale(2); /* make Option 2 bigger */
+  accent-color: var(--dk-00);    /* change its circle color */
+  margin: 1.6rem;
 }
 
 #scoreboard {
@@ -137,7 +166,7 @@ span {
   justify-content: center;
   font-family: monospace;
   font-size: clamp(1.8rem, 1.8rem + 0.5vw, 2.4rem);
-  color: var(--ter-1);
+  color: var(--cr-3);
   padding: 1rem 2rem;
   /*border: 1px solid var(--ter-2);*/
   /*box-shadow: 0 0 8px var(--cr-3);*/   /* subtle glow */
@@ -223,6 +252,10 @@ button:hover {
   background-color: var(--cr-2);
 }
 
+button[data-choice="play"] {
+  margin-top: 4rem;
+}
+
 .buttons-outer {
   display: flex;
   flex-direction: column;
@@ -239,6 +272,25 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+}
+
+.extended {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  margin-top: 8rem;
+}
+
+.return {
+  color: var(--dk-00);
+  background-color: var(--dk-1);
+  border-radius: .8rem;
+  border: 1px solid var(--dk-00);
+}
+
+.return:hover {
+  background-color: var(--dk-1);
 }
 
 label {
@@ -305,11 +357,6 @@ input[type="text"] {
 
 
 
-
-
-
-
-
 /* Modal backdrop */
 #switchMode.modal {
   display: none;              /* hidden by default */
@@ -369,6 +416,65 @@ input[type="text"] {
   from { opacity: 0; transform: scale(0.9); }
   to   { opacity: 1; transform: scale(1); }
 }
+
+
+
+
+
+
+/* Confetti pieces will be absolutely positioned relative to #winner-message */
+#winner-message {
+  position: relative; /* anchor point for confetti */
+}
+
+#winner-message .confetti {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  opacity: 0.9;
+  animation: splash 6s forwards;
+}
+
+/* strips: thin rectangles */
+#winner-message .strip {
+  background-color: var(--color);
+}
+
+/* spirals: use border-radius and rotation */
+#winner-message .spiral {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--color);
+  border-radius: 50%;
+  animation: spiralMove 6s forwards;
+}
+
+@keyframes splash {
+  to {
+    transform: translate(var(--x), var(--y)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes spiralMove {
+  to {
+    transform: translate(var(--x), var(--y)) rotate(720deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

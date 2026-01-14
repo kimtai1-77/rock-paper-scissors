@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rps-start</title>
     <link rel="stylesheet" href="../styles.css">
-    <script src="../script.js"></script>
+    <script defer src="../scripts/start.js"></script>
+    <script defer src="../game.js"></script>
 
     <!--Press start 2P-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="nav">
+    <div class="home">
         <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#35527a"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
     </div>
     <div class="main">
@@ -31,50 +32,5 @@
             </button>
         </div>    
     </div>
-    <script>
-        const nav = document.querySelector(".nav");
-            nav.addEventListener("click", () => {
-            window.location.href = "../index.html";
-        });
-        
-        // Read names from query string 
-        const params = new URLSearchParams(window.location.search); 
-        const singlePlayerName = params.get("single-player-name"); 
-
-        document.querySelector("#singlePlayerName").textContent = singlePlayerName + ","; 
-
-
-        function getPlayerSelection() {
-            const buttons = document.querySelectorAll("button[data-choice]");
-
-            buttons.forEach(currentItem => {
-            currentItem.addEventListener("click", () => {
-            const player1Choice = currentItem.dataset.choice;   
-            const compChoice = getComputerSelection();        
-            passChoicesToDisplay(player1Choice, compChoice);    
-                });
-            });
-        }
-
-        function getComputerSelection() {
-            const numbersChoiceMap = {
-                1: "rock",
-                2: "paper",
-                3: "scissors"
-            };
-
-            const computerChoice = numbersChoiceMap[numberGenerator()];
-            return computerChoice;
-        }
-
-        function passChoicesToDisplay(player1Choice, compChoice) {
-            window.location.href =
-            "../pages/display.html?player1Choice=" + encodeURIComponent(player1Choice) +
-            "&compChoice=" + encodeURIComponent(compChoice);
-        }
-
-        // initialize wiring once DOM is ready
-        getPlayerSelection();
-    </script>
 </body>
 </html>
