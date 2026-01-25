@@ -1,19 +1,16 @@
 
 // configure home button
 
-function goHome(selector) {
-  const element = document.querySelector(selector);
-  if (element) {
-    element.addEventListener("click", () => {
+  function goHome() {
 
     // reset session storage
       sessionStorage.clear();
 
     //redirect to index.html
       window.location.href = "../index.html";
-    });
-  }
-}
+    };
+
+
 
 // Toggle arrows
 const arrowDown = document.getElementById("arrow-down");
