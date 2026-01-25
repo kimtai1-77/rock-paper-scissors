@@ -19,10 +19,16 @@ if (currentRound < totalRounds) {
   roundDisplay.textContent = "Final Round!";
 }
 
-  //after 2 secs go to next page
+  //set redirect delay time to next page
+const redirectDelay = 1000;
+
+const circle = document.querySelector(".progress-circle");
+circle.computedStyleMap.animationDuration = '${redirectDelay / 1000}s';
+
+// redirect after delay
 setTimeout(() => {
   window.location.href = "player-1-selection.html?" + params.toString();
-}, 1500);
+}, redirectDelay);
 
 
 /*const next = document.getElementById("next");
