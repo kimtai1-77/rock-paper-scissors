@@ -136,6 +136,11 @@ input[type="radio"] {
   margin: 1.6rem;
 }
 
+.radio-text {
+  font-size: clamp(1.6rem, 1vw, 1.8rem);
+  color: var(--cr-3);
+}
+
 #scoreboard {
   color: var(--ter-0);
   background-color: var(--ter-3);
