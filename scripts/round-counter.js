@@ -20,20 +20,12 @@ if (currentRound < totalRounds) {
 }
 
   //after 2 secs go to next page
-  /*setTimeout(() => {
-    window.location.href = "player-1-selection.html?" + params.toString();
-}, 2000);
+setTimeout(() => {
+  window.location.href = "player-1-selection.html?" + params.toString();
+}, 1500);
 
-} else if (currentRound === totalRounds) {
-  roundDisplay.textContent = "Final Round!";
 
-  // When all rounds finished - redirect to results page
-  setTimeout(() => {
-  window.location.href = "results.html";
-}, 2000);
-}*/
-
-const next = document.getElementById("next");
+/*const next = document.getElementById("next");
 next.addEventListener("click", () => {
   window.location.href = "./player-1-selection.html?" + params.toString();
-})
+})*/
