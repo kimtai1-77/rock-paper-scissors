@@ -132,7 +132,7 @@ form {
 
 input[type="radio"] {
   transform: scale(2); /* make Option 2 bigger */
-  accent-color: var(--dk-00);    /* change its circle color */
+  accent-color: var(--dk-1);    /* change its circle color */
   margin: 1.6rem;
 }
 
@@ -421,6 +421,20 @@ input[type="text"] {
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to   { opacity: 1; transform: scale(1); }
+}
+
+.progress-circle {
+  width: 6.4rem;
+  height: auto;
+  border: .8rem solid var(--cr-1);
+  border-top: .8rem solid var(--ter-2);
+  border-radius: 50%;
+  animation: spin 3s linear forwards;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 
