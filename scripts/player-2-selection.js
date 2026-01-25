@@ -6,6 +6,8 @@
     const player2Name = params.get("player2"); 
     const totalRounds = params.get("rounds");
     const currentRound = params.get("current");
+    const player1Choice = params.get("player1Choice"); 
+
     
     // Update the span with Player 2's name and turn
     document.getElementById("player2Name").textContent = player2Name + ","; 

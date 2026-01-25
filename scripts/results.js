@@ -94,8 +94,4 @@ function updateParams() {
   })
 }
 
-const goHome = document.querySelector(".return");
-goHome.addEventListener("click", () => {
-  sessionStorage.clear();
-  window.location.href = "../index.html";
-})
+
