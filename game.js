@@ -58,10 +58,3 @@ function getWinner(choice1, choice2) {
       return "player2";
     }
 }
-
-
-
-
-
-
-
