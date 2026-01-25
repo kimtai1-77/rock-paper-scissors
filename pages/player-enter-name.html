@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
-    <script src="../script.js" defer></script>
+    <script src="../scripts/player-enter-name.js" defer></script>
+    <script src="../game.js" defer></script>
     <title>Document</title>
 
     <!--Press start 2P-->
@@ -13,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="home">
+    <div class="home" onclick="goHome()">
         <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#35527a"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
     </div>
     <div class="main selector">
@@ -23,35 +24,7 @@
             <input type="text" id="singlePlayerName">
             </div>
         </div>   
-        <button onclick="captureName()">Proceed</button> 
+        <button data-action="proceed">Proceed</button> 
     </div>
-    <script>
-        const home = document.querySelector(".home");
-            home.addEventListener("click", () => {
-
-            // reset session storage
-            sessionStorage.clear();
-
-            //redirect to index.html
-            window.location.href = "../index.html";
-        });
-
-        function captureName () {
-            const singlePlayerName = document.getElementById("singlePlayerName").value;
-
-            // check if name is empty
-            if (!singlePlayerName) {
-                alert("Please enter a name before proceeding")
-                return;
-            }
-
-            //build query parameters
-            const params = new URLSearchParams();
-            params.set("single-player-name", singlePlayerName);
-            params.set("mode", "single");
-
-            window.location.href = "./start.html?" + params.toString();
-        }
-    </script>
 </body>
 </html>

@@ -6,7 +6,7 @@
     <title>Rps-p1-select</title>
     <link rel="stylesheet" href="../styles.css">
     <script src="../game.js"></script>
-    <script defer src="../scripts/player-2-selection.js" ></script>
+    <script defer src="../scripts/player-2-selection.js"></script>
 
     <!--Press start 2P-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="home">
+    <div class="home" onclick="goHome()">
         <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#35527a"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
     </div>
     <div class="main">
@@ -33,46 +33,5 @@
             </button>
         </div>    
     </div>
-
-    <script>
-        const home = document.querySelector(".home");
-            home.addEventListener("click", () => {
-
-            // reset session storage
-            sessionStorage.clear();
-
-            //redirect to index.html
-            window.location.href = "../index.html";
-        });
-
-        // Read names and Player 1 choice from query string
-        const params = new URLSearchParams(window.location.search);
-        const player1Name = params.get("player1") || "Player 1"; 
-        const player2Name = params.get("player2") || "Player 2"; 
-        const player1Choice = params.get("player1Choice"); 
-        
-        // Update the span with Player 2's name and turn
-        document.getElementById("player2Name").textContent = player2Name + ","; 
-        document.querySelector(".player-turn").textContent = "🏁 " + player2Name + "'s turn";
-
-        
-        // Wire up buttons 
-        document.querySelectorAll(".buttons button").forEach(btn => { 
-            btn.addEventListener("click", () => { 
-                const player2Choice = btn.getAttribute("data-choice"); 
-                
-                // Build query for display page 
-                const nextParams = new URLSearchParams(); 
-                nextParams.set("player1", player1Name); 
-                nextParams.set("player2", player2Name); 
-                nextParams.set("player1Choice", player1Choice); 
-                nextParams.set("player2Choice", player2Choice);
-                nextParams.set("mode", "multi"); // mark as multiplayer 
-                 
-                // Redirect to display page 
-                window.location.href = "./display.html?" + nextParams.toString(); 
-            });
-        });
-    </script>
 </body>
 </html>
