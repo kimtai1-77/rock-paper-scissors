@@ -6,8 +6,10 @@ captureButton.addEventListener("click", () => {
 });
 
 function captureNames () {
-    const Player1Name = document.getElementById("player1Name").value;
-    const player2Name = document.getElementById("player2Name").value;
+    const Player1Name = capitalizeFirstletter(
+    document.getElementById("player1Name").value);
+    const player2Name = capitalizeFirstletter (
+    document.getElementById("player2Name").value);
 
     // check if name was entered
     if (!Player1Name) {
@@ -26,4 +28,9 @@ function captureNames () {
     params.set("mode", "multi");
 
     window.location.href = "./round-select.html?" + params.toString();
+}
+
+function capitalizeFirstletter (name) {
+    if (!name) return "";
+    return name.charAt(0).toUpperCase() + name.slice(1);
 }
