@@ -7,24 +7,45 @@ html {
 :root {
   font-size: 62.5%;
   box-sizing: border-box;
-  font-family: "Press Start 2p", cursive;
+  font-family: "Press Start 2p", monospace;
+  font-family: "Silkscreen", monospace;
+  font-family: "Sora", monospace;
   line-height: 1.8;
+  letter-spacing: .1rem;
+  
 
   --cr-0: #fcf1dc;
   --cr-1: #e1c89a;
   --cr-2: #ddb783;
   --cr-3: #b38d57;
+  --cr-3-5: #916b35;
   --cr-4: #67481e;
   --cr-5: #1e1406;
   --dk-000: #5678a7;
   --dk-00: #35527a;
+  --dk-01: #1e3555;
   --dk-1: #1a2a40;
   --dk-2: #040a12;
+  --ter-00: #d5caf1;
   --ter-0: #c4aef6;
   --ter-1: #9881ca;
   --ter-2: #46336e;
   --ter-3: #1e1239;
   --dk-grey: #585a5c;
+
+  --li-1: #fdfaf5;
+  --li-2: #c9c6c0;
+  --ol-1: #fbfaf9;
+  --ol-2: #e7dfcc;
+  --ol-2-5: #7b7d7d;
+  --ol-3: #565756;
+  --sl-000: #dce2e8;
+  --sl-00: #aeb6bf;
+  --sl-0: #8d97a2;
+  --sl-1: #6c7a89;
+  --sl-2: #475666;
+  --sl-3: #2e3b48;
+  --sl-4: #1e2a36;
 }
 
 *, *::before, *::after {
@@ -35,18 +56,35 @@ html {
 
 
 
-h1 {
-  font-size: clamp(2.4rem, 2rem + 1.5vw, 4rem);
-}
 
-h1, h2, h3, p {
-  color: var(--cr-3);
+h1, h2, h3, h4, p {
+  color: var(--sl-1);
   text-align: center;
-  line-height: 1.8;
 }
 
-p, form {
-  font-size: clamp(1.2rem, 1rem + 0.5vw, 1.6rem);
+h1 {
+  font-size: clamp(3.2rem, 2.4rem + 3vw, 5rem);
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: clamp(2.6rem, 2rem + 2vw, 4rem);
+  line-height: 1.35;
+}
+
+h3 {
+  font-size: clamp(2.2rem, 1.6rem + 1.5vw, 3.2rem);
+  line-height: 1.4;
+}
+
+h4, form {
+  font-size: clamp(1.8rem, 1.4rem + 1vw, 2.4rem);
+  line-height: 1.45;
+}
+
+p {
+  font-size: clamp(1.4rem, 1.2rem + 0.5vw, 1.8rem);
+  line-height: 1.6;
 }
 
 select {
@@ -60,14 +98,13 @@ select option {
 }
 
 body {
-  background-color: var(--dk-1);
+  background-color: var(--ol-1);
   padding: 0 clamp(2.8rem, 2.6rem + 1.5vw, 4.8rem);
   margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*justify-content: center;*/
 }
 
 .start-main {
@@ -97,7 +134,6 @@ body {
   /*border: 2px solid var(--cr-2);*/
   /*box-shadow: 0 0 12px var(--ter-1);  */  /* subtle glow */
   height: fit-content;
-  background-color: var(--dk-1);
 }
 
 .home {
@@ -119,11 +155,11 @@ body {
 }
 
 #player-choice, #computer-choice, #roundResult {
-  color: var(--cr-2);
+  color: var(--ol-2-5);
 }
 
 span {
-  color: var(--ter-0);
+  color: var(--cr-3);
 }
 
 form {
@@ -132,22 +168,22 @@ form {
 
 input[type="radio"] {
   transform: scale(2); /* make Option 2 bigger */
-  accent-color: var(--dk-1);    /* change its circle color */
+  accent-color: var(--sl-1);    /* change its circle color */
   margin: 1.6rem;
 }
 
 .radio-text {
-  font-size: clamp(1.6rem, 1vw, 1.8rem);
-  color: var(--cr-3);
+  color: var(--cr-3-5);
 }
 
 #scoreboard {
-  color: var(--ter-0);
-  background-color: var(--ter-3);
+  color: var(--ol-2);
+  background-color: var(--dk-1);
   font-size: medium;
-  padding: clamp(1.2rem, .8rem + .5vh, 2.4rem);
+  font-family: "Silkscreen", monospace;
+  padding: clamp(2rem, 1.8rem + .5vh, 2.4rem);
   border-radius: .8rem;
-  border: .2rem solid var(--cr-2);
+  border: .4rem solid var(--cr-3-5);
   
   width: fit-content;
   margin: 0rem auto;
@@ -155,9 +191,10 @@ input[type="radio"] {
   text-align: center;
 }
 
-#scoreboard h3 {
+#scoreboard h2 {
   margin-top: 0;
   padding-top: .2rem;
+  color: var(--cr-2);
 }
 
 #scoreboard-body {
@@ -170,12 +207,12 @@ input[type="radio"] {
 .player-turn {
   display: flex;
   justify-content: center;
-  font-family: monospace;
+  font-family: "silkscreen", cursive;
   font-size: clamp(1.8rem, 1.8rem + 0.5vw, 2.4rem);
-  color: var(--cr-3);
+  color: var(--sl-2);
   padding: 1rem 2rem;
   /*border: 1px solid var(--ter-2);*/
-  /*box-shadow: 0 0 8px var(--cr-3);*/   /* subtle glow */
+  box-shadow: 0 0 8px var(--cr-3);  /* subtle glow */
   margin-bottom: 2.4rem;
   border-bottom: 4px solid transparent;
   border-radius: 2px;
@@ -212,27 +249,29 @@ input[type="radio"] {
 button {
   display: flex;
   justify-content: center;
-  padding: 2rem 4rem;
-  background-color: var(--cr-1);
-  color: var(--dk-1);
+  font-size: clamp(1.4rem, 1.2rem + 1vw, 1.6rem); 
+  line-height: 1.4; 
+  padding: 1.6rem 2.4rem;
+  background-color: var(--dk-00);
+  color: var(--ol-2);
   border-radius: 1.2rem;
   cursor: pointer;
-  width: 18rem;
-  border: none;
+  width: 16rem;
+  border: 1px solid var(--sl-000);
 }
 
-button#play-again {
+button #play-again {
   width: 24rem;
   margin-bottom: 2rem;
   border: none;
 }
 
 button[data-set], button[data-set]:hover {
-  width: 16rem;
+  width: 20rem;
   padding: 1.6rem 1.6rem;
-  font-family: monospace;
-  color: var(--cr-2);
-  background-color: var(--dk-1);
+  font-family: "Silkscreen", cursive;
+  color: var(--li-2);
+  background-color: var(--sl-2);
   border: .5px solid var(--cr-3);
 }
 
@@ -251,11 +290,11 @@ button, textarea, select, input {
 button[data-selection] {
   line-height: 2;
   width: 24rem;
-  padding: 1.2rem 3.2rem;
+  padding: 1.6rem 2.8rem;
 }
 
 button:hover {
-  background-color: var(--cr-2);
+  background-color: var(--dk-01);
 }
 
 button[data-choice="play"] {
@@ -269,7 +308,6 @@ button[data-choice="play"] {
   gap: 1.2rem;
   padding: 2rem 0;
   padding-bottom: 8rem;
-  /*background-color: var(--cr-0);*/
   width: 100vw;
   border-top: 1px solid var(--cr-2);
 }
@@ -290,31 +328,32 @@ button[data-choice="play"] {
 
 .return {
   color: var(--dk-000);
-  background-color: var(--dk-1);
+  background-color: var(--sl-000);
   border-radius: .8rem;
-  border: 1px solid var(--dk-000);
+  border: 1px solid var(--sl-000);
 }
 
 .return:hover {
-  background-color: var(--dk-1);
+  background-color: var(--sl-00);
 }
 
 label {
-  color: var(--cr-2);
-  font-size: clamp(1.2rem, 1.2rem + 0.5vw, 1.4rem);
+  color: var(--cr-3-5);
+  font-size: clamp(1.8rem, 1.4rem + 1vw, 2.4rem);
   text-align: center;
 }
 
 input[type="text"] {
-  border: 2px solid var(--cr-1);      
-  border-radius: 6px;
+  border: 2px solid var(--sl-0);      
+  border-radius: .8rem;
   padding: 1.2rem 1rem;
-  font-size: clamp(1.4rem, 1.2rem + 0.5vw, 1.6rem);
-  background-color: var(--dk-2);
-  color: var(--ter-1);        
+  font-size: clamp(1.6rem, 1.5rem + 0.5vw, 1.8rem);
+  background-color: var(--li-1);
+  color: var(--sl-1);        
   box-shadow: 0 0 12px var(--cr-2);    /* subtle glow */
-  caret-color: var(--ter-1);   
-  max-width: 24rem;
+  caret-color: var(--sl-0);   
+  width: 24rem;
+  height: 6rem;
 }
 
 .input-cont {
@@ -328,6 +367,10 @@ input[type="text"] {
   flex-direction: column;
   gap: .4rem;
   flex-wrap: wrap;
+}
+
+.display-results {
+  margin-bottom: 2.8rem;
 }
 
 .arrows {
@@ -413,7 +456,7 @@ input[type="text"] {
 }
 
 #cancelSwitch {
-  background-color: gray;
+  background-color: rgb(160, 158, 158);
   color: var(--cr-0);
 }
 
@@ -424,10 +467,10 @@ input[type="text"] {
 }
 
 .progress-circle {
-  width: 6.4rem;
-  height: auto;
+  width: 5.6rem;
+  height: 5.6rem;
   border: .8rem solid var(--cr-1);
-  border-top: .8rem solid var(--ter-2);
+  border-top: .8rem solid var(--sl-1);
   border-radius: 50%;
   animation: spin 3s linear forwards;
 }
@@ -485,17 +528,66 @@ input[type="text"] {
 
 
 
+/* Page icons */
+.floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
 
+.icon {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  opacity: .6;
+  animation: float 20s linear infinite;  /* speed of the animation */
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg); /* editable color */
+}
 
+/* Unique paths for each icon */
+.scissors {
+  top: 90%;
+  left: 20%;
+  animation-delay: 2s;
+}
 
+.globe {
+  top: 120%;
+  left: 50%;
+  animation-delay: 2s;
+}
 
+.paper {
+  top: 20%;
+  left: 60%;
+  animation-delay: 0s;
+}
 
+.planet {
+  top: 80%;
+  left: 90%;
+  animation-delay: 3s;
+}
 
+.gesture {
+  top: 50%;
+  left: 20%;
+  animation-delay: 1s;
+}
 
-
-
-
-
+/* Orbit-style float animation */
+@keyframes float {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(-5vw, -20vh) rotate(90deg); }
+  50%  { transform: translate(0, -70vh) rotate(180deg); }
+  75%  { transform: translate(-15vw, -30vh) rotate(270deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
 
 
 
