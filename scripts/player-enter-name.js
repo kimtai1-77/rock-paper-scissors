@@ -6,7 +6,8 @@
     })
     
     function captureName () {
-        const singlePlayerName = document.getElementById("singlePlayerName").value;
+        const singlePlayerName = capitalizeFirstletter(
+        document.getElementById("singlePlayerName").value);
 
         // check if name is empty
         if (!singlePlayerName) {

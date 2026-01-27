@@ -29,8 +29,3 @@ function captureNames () {
 
     window.location.href = "./round-select.html?" + params.toString();
 }
-
-function capitalizeFirstletter (name) {
-    if (!name) return "";
-    return name.charAt(0).toUpperCase() + name.slice(1);
-}
