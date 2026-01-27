@@ -58,3 +58,8 @@ function getWinner(choice1, choice2) {
       return "player2";
     }
 }
+
+function capitalizeFirstletter (name) {
+    if (!name) return "";
+    return name.charAt(0).toUpperCase() + name.slice(1);
+}
