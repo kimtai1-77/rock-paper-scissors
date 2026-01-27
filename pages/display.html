@@ -12,19 +12,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!--Silkscreen-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!--Sora-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Silkscreen:wght@400;700&family=Sora:wght@100..800&family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!--<div class="home">
-        <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#35527a"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
-    </div>-->
     <div class="display-outer">
         <div class="main selector display">
             <div class="input-cont-display">
-                <span><h2 id="player-choice"></h2></span>
-                <h2 id="computer-choice"></h2>
-                <h2 id="roundResult"></h2>
+                <div class="display-results">
+                    <span><h4 id="player-choice"></h4></span>
+                    <h4 id="computer-choice"></h4>
+                    <h4 id="roundResult"></h4>
+                </div>
                 <div id="scoreboard">
-                    <h3>SCOREBOARD</h3>
+                    <h2>SCOREBOARD</h2>
                     <pre id="scoreboard-body"></pre>
                 </div>
             </div>
@@ -32,8 +42,8 @@
         <button id="play-again">Play again</button>
         <div>
             <div class="arrows">     
-                <svg xmlns="http://www.w3.org/2000/svg" id="arrow-down" height="44px" viewBox="0 -960 960 960" width="44px" fill="#b38d57"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" id="arrow-up" class="hidden" height="44px" viewBox="0 -960 960 960" width="44px" fill="#b38d57"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" id="arrow-down" height="44px" viewBox="0 -960 960 960" width="44px" fill="#6c7a89"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" id="arrow-up" class="hidden" height="44px" viewBox="0 -960 960 960" width="44px" fill="#6c7a89"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg>
             </div>
             <div class="buttons-outer hidden">
                 <button data-set="start-over">Start over</button>
