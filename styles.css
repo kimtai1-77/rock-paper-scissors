@@ -155,7 +155,7 @@ body {
 }
 
 #player-choice, #computer-choice, #roundResult {
-  color: var(--ol-2-5);
+  color: var(--sl-1);
 }
 
 span {
